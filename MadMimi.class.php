@@ -61,7 +61,7 @@ class MadMimi {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		// Fix for OpenSSL bug (http://stackoverflow.com/questions/8619706/running-curl-with-openssl-0-9-8-against-openssl-1-0-0-server-causes-handshake-er)
-		curl_setopt($ch, CURLOPT_SSLVERSION, 3);
+		curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
 		// Fix libcurl vs. apache2
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Expect:"));
 		if ($return_status == true) {
